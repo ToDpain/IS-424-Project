@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Car{% endblock %}
+
+{% block content %}
+<h1>Add Car</h1>
+<form action="{% url 'add_car' %}" method="post">
+    {% csrf_token %}
+    <label for="car_name">Car Name:</label>
+    <input type="text" id="car_name" name="car_name" required>
+    <br><br>
+    <label for="car_brand">Car Brand:</label>
+    <input type="text" id="car_brand" name="car_brand" required>
+    <br><br>
+    <input type="submit" value="Add Car">
+</form>
+{% endblock %}

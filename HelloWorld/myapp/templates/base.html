@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}MyApp{% endblock %}</title>
+    <style>
+        /* Add your custom CSS styles here */
+    </style>
+</head>
+<body>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'car_list' %}">Car List</a></li>
+                <li><a href="{% url 'add_car' %}">Add Car</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <!-- Add more menu links here if needed -->
+            </ul>
+        </nav>
+        <hr>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

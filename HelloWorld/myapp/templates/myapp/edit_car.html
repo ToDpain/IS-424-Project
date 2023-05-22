@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Car{% endblock %}
+
+{% block content %}
+<h1>Edit Car</h1>
+<form action="{% url 'edit_car' car.id %}" method="post">
+    {% csrf_token %}
+    <label for="car_name">Car Name:</label>
+    <input type="text" id="car_name" name="car_name" value="{{ car.name }}" required>
+    <br><br>
+    <label for="car_brand">Car Brand:</label>
+    <input type="text" id="car_brand" name="car_brand" value="{{ car.brand }}" required>
+    <br><br>
+    <input type="submit" value="Save">
+</form>
+{% endblock %}
